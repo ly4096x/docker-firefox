@@ -1,0 +1,13 @@
+version: '3'
+services:
+  firefox-vnc:
+    image: ghcr.io/ly4096x/firefox_vnc_server
+    container_name: firefox-vnc
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - profile-vol:/root/.profile-vol
+    restart: unless-stopped
+
+volumes:
+  profile-vol:
